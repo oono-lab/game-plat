@@ -1,0 +1,82 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+  }
+  
+  .form-wrapper {
+    position: relative;
+    width: 300px;
+    height: 500px;
+  }
+  
+  .signup-container, .login-container {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .signup-container {
+    top: 0;
+    height: 500px;
+    z-index: 1;
+  }
+  
+  .login-container {
+    top: 50px; /* ←ここをマイナスにする！ サインアップのタイトルだけ見えるように少し上にずらす */
+    height: 470px;
+    z-index: 2;
+  }
+  
+  .login-title, .signup-title {
+    background: #e0e0e0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  .login-content, .signup-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 16px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #45a049;
+  }
+  
+  /* ログインを縮めたとき */
+  .login-container.shrink {
+    height: 55px; /* タイトルだけ */
+    top: 455px; /* サインアップのタイトル位置と揃える */
+  }
+  

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>ログイン・サインアップ</title>
+  <link rel="stylesheet" href="/css/login.css">
+  <script src="/js/login.js" defer></script>
+</head>
+<body>
+  <div class="form-wrapper">
+
+    <!-- サインアップフォーム -->
+<div class="signup-container" id="signupForm">
+    <div class="signup-title" onclick="toggleForm('login')">サインアップ</div>
+    <div class="signup-content">
+      <!-- エラー表示 -->
+      <p th:if="${signupError != null and signupError != ''}"
+         class="error-message"
+         th:text="${signupError}"></p>
+  
+      <form th:action="@{/signup}" method="post">
+        <input type="text" name="username" placeholder="ユーザー名" required>
+        <input type="email" name="email" placeholder="メールアドレス" required>
+        <input type="password" name="password" placeholder="パスワード" required>
+        <button type="submit">サインアップ</button>
+      </form>
+    </div>
+  </div>
+
+    <!-- ログインフォーム -->
+    <div class="login-container" id="loginForm">
+      <div class="login-title" onclick="toggleForm('signup')">ログイン</div>
+      <div class="login-content">
+        <form th:action="@{/login}" method="post">
+            <input type="email" name="username" placeholder="メールアドレス">
+            <input type="password" name="password" placeholder="パスワード">
+            <button type="submit">ログイン</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
