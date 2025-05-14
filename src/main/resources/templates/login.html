@@ -11,7 +11,7 @@
 
     <!-- サインアップフォーム -->
 <div class="signup-container" id="signupForm">
-    <div class="signup-title" onclick="toggleForm('login')">サインアップ</div>
+    <div class="signup-title" onclick="toggleForm('login')">SignUp</div>
     <div class="signup-content">
       <!-- エラー表示 -->
       <p th:if="${signupError != null and signupError != ''}"
@@ -29,7 +29,7 @@
 
     <!-- ログインフォーム -->
     <div class="login-container" id="loginForm">
-      <div class="login-title" onclick="toggleForm('signup')">ログイン</div>
+      <div class="login-title" onclick="toggleForm('signup')">Login</div>
       <div class="login-content">
         <form th:action="@{/login}" method="post">
             <input type="email" name="username" placeholder="メールアドレス">
